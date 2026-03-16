@@ -9,7 +9,8 @@ export default function Services() {
         "SEO optimization",
         "Hosting setup",
         "Performance optimization",
-        "Backup & disaster recovery"
+        "Backup & disaster recovery",
+        "Security"
       ]
     },
     {
@@ -73,7 +74,6 @@ export default function Services() {
     "Network Monitoring",
     "VPN & Firewall Configuration",
     "Backup & Disaster Recovery",
-    "IT Asset Management",
     "Cybersecurity Audits",
     "Security Awareness Training"
   ];
@@ -90,17 +90,31 @@ export default function Services() {
 
   return (
     <div>
-      <section className="bg-gray-900 text-white py-28 px-6 text-center">
-        <h1 className="text-4xl font-bold mb-6">
+      {/* HERO SECTION */}
+      <section className="relative text-white py-28 px-6 text-center overflow-hidden">
+
+        {/* Background Image */}
+        <img
+          src="1.png"
+          className="absolute inset-0 w-full h-full object-cover -z-10"
+          alt="services background"
+        />
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/60 -z-10"></div>
+
+        <h1 className="text-3xl md:text-4xl font-bold mb-6">
           Our IT Services
         </h1>
 
-        <p className="max-w-3xl mx-auto text-gray-300">
+        <p className="max-w-3xl mx-auto text-gray-200 text-sm md:text-base">
           KBT Fiesta Technologies provides secure and scalable IT solutions
           including website development, cloud infrastructure, managed IT
           support and cybersecurity services for businesses worldwide.
         </p>
+
       </section>
+
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
 
@@ -123,7 +137,8 @@ export default function Services() {
 
         </div>
       </section>
-      <section className=" py-24 px-6">
+
+      <section className="py-24 px-6">
 
         <div className="max-w-6xl mx-auto">
 
@@ -147,6 +162,7 @@ export default function Services() {
         </div>
 
       </section>
+
       <section className="py-24 px-6">
 
         <div className="max-w-5xl mx-auto">

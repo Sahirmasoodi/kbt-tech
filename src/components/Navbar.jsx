@@ -5,10 +5,10 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-900 text-white sticky top-0 z-50 shadow">
+    <nav className="bg-gray-950 text-white sticky top-0 z-50 shadow shadow-gray-900">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         <Link to="/" className="text-2xl font-bold tracking-wide">
-          KBT <span className="text-blue-500">Fiesta</span>
+          KBT <span className="text-blue-500 ms-2">Technologies</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -76,7 +76,7 @@ export default function Navbar() {
 
             <Link
               to="/contact"
-              className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg"
+              className=" px-6 py-3 rounded-lg"
               onClick={() => setMenuOpen(false)}
             >
               Contact

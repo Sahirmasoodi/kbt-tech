@@ -26,14 +26,25 @@ export default function Home() {
 
   return (
     <div>
-      <section className="bg-linear-to-b from-gray-900 to-gray-800 text-white py-32 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      {/* HERO SECTION */}
+      <section
+        className="relative min-h-screen flex items-center text-white px-6"
+        style={{
+          backgroundImage: "url('/4.webp')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full py-24">
           <div>
-            <h1 className="text-5xl font-bold leading-tight mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">
               Reliable Global IT Services for Modern Businesses
             </h1>
 
-            <p className="text-gray-300 text-lg mb-8">
+            <p className="text-gray-200 text-base md:text-lg mb-8">
               KBT Fiesta Technologies provides secure, scalable and affordable
               IT services for startups, small businesses and enterprises
               worldwide.
@@ -42,27 +53,27 @@ export default function Home() {
             <div className="flex gap-4 flex-wrap">
               <Link
                 to="/contact"
-                className="bg-gray-600 hover:bg-gray-700 px-7 py-3 rounded-lg font-semibold transition"
+                className="bg-gray-600 hover:bg-gray-700 px-6 py-3 rounded-lg font-semibold transition"
               >
                 Get Started
               </Link>
 
               <Link
                 to="/services"
-                className="border border-white px-7 py-3 rounded-lg hover:bg-white hover:text-black transition"
+                className="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-black transition"
               >
                 Our Services
               </Link>
             </div>
 
-            <div className="flex gap-10 mt-10 text-sm text-gray-300">
+            <div className="flex gap-8 md:gap-10 mt-10 text-sm text-gray-200 flex-wrap">
               <div>
-                <p className="text-xl font-bold text-white">500+</p>
+                <p className="text-xl font-bold text-white">150+</p>
                 <p>Projects</p>
               </div>
 
               <div>
-                <p className="text-xl font-bold text-white">120+</p>
+                <p className="text-xl font-bold text-white">12+</p>
                 <p>Clients</p>
               </div>
 
@@ -77,7 +88,7 @@ export default function Home() {
             <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8">
               <h3 className="text-xl font-semibold mb-4">What We Deliver</h3>
 
-              <ul className="space-y-3 text-gray-300">
+              <ul className="space-y-3 text-gray-200">
                 <li>✔ Cloud Infrastructure Solutions</li>
                 <li>✔ Website & App Development</li>
                 <li>✔ Managed IT Services</li>
@@ -88,6 +99,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* SERVICES */}
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-16">
