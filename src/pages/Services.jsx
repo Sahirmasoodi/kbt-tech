@@ -10,8 +10,8 @@ export default function Services() {
         "Hosting setup",
         "Performance optimization",
         "Backup & disaster recovery",
-        "Security"
-      ]
+        "Security",
+      ],
     },
     {
       title: "Application Development",
@@ -20,8 +20,8 @@ export default function Services() {
         "Mobile app development",
         "SaaS product development",
         "API integrations",
-        "Software maintenance & upgrades"
-      ]
+        "Software maintenance & upgrades",
+      ],
     },
     {
       title: "Managed End-User IT Support",
@@ -31,8 +31,8 @@ export default function Services() {
         "Device management",
         "Software installation",
         "System updates & patch management",
-        "IT onboarding for employees"
-      ]
+        "IT onboarding for employees",
+      ],
     },
     {
       title: "Email & Collaboration Services",
@@ -42,8 +42,8 @@ export default function Services() {
         "Email migration",
         "Spam filtering",
         "Email security",
-        "Backup & archiving"
-      ]
+        "Backup & archiving",
+      ],
     },
     {
       title: "Cloud Infrastructure Services",
@@ -53,8 +53,8 @@ export default function Services() {
         "Google Cloud Platform setup",
         "Cloud migration",
         "Virtual server deployment",
-        "Cloud backup solutions"
-      ]
+        "Cloud backup solutions",
+      ],
     },
     {
       title: "Endpoint Security & Protection",
@@ -63,9 +63,9 @@ export default function Services() {
         "Endpoint monitoring",
         "Malware protection",
         "Threat detection",
-        "Security patching"
-      ]
-    }
+        "Security patching",
+      ],
+    },
   ];
 
   const additionalServices = [
@@ -75,7 +75,7 @@ export default function Services() {
     "VPN & Firewall Configuration",
     "Backup & Disaster Recovery",
     "Cybersecurity Audits",
-    "Security Awareness Training"
+    "Security Awareness Training",
   ];
 
   const industries = [
@@ -85,111 +85,94 @@ export default function Services() {
     "E-commerce Companies",
     "Healthcare",
     "Finance",
-    "Education"
+    "Education",
   ];
 
   return (
     <div>
-      {/* HERO SECTION */}
-      <section className="relative text-white py-28 px-6 text-center overflow-hidden">
-
-        {/* Background Image */}
+      <section className="relative h-[50vh] flex items-center justify-center text-white px-6 text-center overflow-hidden">
         <img
-          src="1.png"
+          src="3.jpg"
           className="absolute inset-0 w-full h-full object-cover -z-10"
           alt="services background"
         />
 
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/60 -z-10"></div>
 
-        <h1 className="text-3xl md:text-4xl font-bold mb-6">
-          Our IT Services
-        </h1>
+        <div className="max-w-3xl mx-auto">
+          <h1 className="text-3xl md:text-5xl font-bold mb-6">
+            Our IT Services
+          </h1>
 
-        <p className="max-w-3xl mx-auto text-gray-200 text-sm md:text-base">
-          KBT Fiesta Technologies provides secure and scalable IT solutions
-          including website development, cloud infrastructure, managed IT
-          support and cybersecurity services for businesses worldwide.
-        </p>
-
+          <p className="text-gray-200 text-sm md:text-lg">
+            KBT Fiesta Technologies provides secure and scalable IT solutions
+            including website development, cloud infrastructure, managed IT
+            support and cybersecurity services for businesses worldwide.
+          </p>
+        </div>
       </section>
 
-      <section className="py-24 px-6">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
-
+      <section className="py-24 px-6 ">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-stretch">
           {services.map((service, index) => (
             <div
               key={index}
-              className="border rounded-xl p-8 shadow-sm hover:shadow-lg transition"
+              className="bg-linear-to-br from-gray-900 to-black text-white border border-gray-800 rounded-xl p-8 shadow-lg hover:shadow-2xl transition flex flex-col h-full"
             >
               <h3 className="text-xl font-semibold mb-4">
                 {service.title}
               </h3>
 
-              <ul className="space-y-2 text-gray-600 list-disc list-inside">
+              <ul className="space-y-2 text-gray-300 list-disc list-inside grow">
                 {service.items.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
               </ul>
             </div>
           ))}
-
         </div>
       </section>
 
       <section className="py-24 px-6">
-
         <div className="max-w-6xl mx-auto">
-
           <h2 className="text-3xl font-bold text-center mb-12">
             Additional IT Services
           </h2>
 
-          <div className="grid md:grid-cols-4 gap-6">
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
             {additionalServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-white border rounded-lg p-6 text-center shadow-sm"
+                className="bg-linear-to-br from-gray-900 to-black text-white border border-gray-800 rounded-lg p-6 text-center shadow-lg"
               >
                 {service}
               </div>
             ))}
-
           </div>
-
         </div>
-
       </section>
 
-      <section className="py-24 px-6">
-
+      <section className="py-24 px-6 ">
         <div className="max-w-5xl mx-auto">
-
           <h2 className="text-3xl font-bold text-center mb-12">
             Industries We Serve
           </h2>
 
-          <div className="grid md:grid-cols-3 gap-6 text-center">
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-center">
             {industries.map((industry, index) => (
               <div
                 key={index}
-                className="border rounded-lg p-6 shadow-sm hover:shadow-md transition"
+                className="bg-linear-to-br from-gray-900 to-black text-white border border-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition"
               >
                 {industry}
               </div>
             ))}
-
           </div>
-
         </div>
-
       </section>
 
-      <section className="bg-gray-900 text-white py-24 text-center px-6">
 
+      <section className="bg-gray-950 text-white py-24 text-center px-6">
         <h2 className="text-3xl font-bold mb-6">
           Need Professional IT Services?
         </h2>
@@ -205,9 +188,7 @@ export default function Services() {
         >
           Contact Our Team
         </a>
-
       </section>
-
     </div>
   );
 }

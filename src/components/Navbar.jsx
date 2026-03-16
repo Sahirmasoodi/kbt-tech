@@ -8,7 +8,7 @@ export default function Navbar() {
     <nav className="bg-gray-950 text-white sticky top-0 z-50 shadow shadow-gray-900">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         <Link to="/" className="text-2xl font-bold tracking-wide">
-          KBT <span className="text-blue-500 ms-2">Technologies</span>
+          KBT <span className="text-gray-500 ms-2">Technologies</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-medium">
@@ -40,7 +40,7 @@ export default function Navbar() {
         <div className="md:hidden fixed inset-0 bg-gray-900 text-white flex flex-col">
           <div className="flex justify-between items-center px-6 py-4 border-b border-gray-700">
             <span className="text-xl font-bold">
-              KBT <span className="text-blue-500">Fiesta</span>
+              KBT <span className="text-gray-500">Technologies</span>
             </span>
 
             <button onClick={() => setMenuOpen(false)} className="text-2xl">
