@@ -1,86 +1,147 @@
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Menu, X, Cpu } from "lucide-react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const offset = 80;
+      const top = el.offsetTop - offset;
+
+      window.scrollTo({
+        top,
+        behavior: "smooth",
+      });
+    }
+    setMenuOpen(false);
+  };
+
+  const navText = scrolled ? "text-slate-800" : "text-white/90";
+  const navHover = scrolled ? "hover:text-brand-600" : "hover:text-white";
 
   return (
-    <nav className="bg-gray-950 text-white sticky top-0 z-50 shadow shadow-gray-900">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-        <Link to="/" className="text-2xl font-bold tracking-wide">
-          KBT <span className="text-gray-500 ms-2">Technologies</span>
-        </Link>
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/90 backdrop-blur-md shadow-sm py-3"
+          : "bg-transparent py-5"
+      }`}
+    >
+      <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
+        <button
+          onClick={() => scrollToSection("home")}
+          className="flex items-center gap-2"
+        >
+          <div className="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center">
+            <Cpu className="text-white w-6 h-6" />
+          </div>
+
+          <span
+            className={`text-2xl font-bold ${
+              scrolled ? "text-slate-900" : "text-white"
+            }`}
+          >
+            KBT <span className="text-brand-600">Technologies</span>
+          </span>
+        </button>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-          <Link to="/" className="hover:text-blue-400 transition">
+          <button
+            onClick={() => scrollToSection("home")}
+            className={`${navText} ${navHover} transition`}
+          >
             Home
-          </Link>
+          </button>
 
-          <Link to="/services" className="hover:text-blue-400 transition">
+          <button
+            onClick={() => scrollToSection("services")}
+            className={`${navText} ${navHover} transition`}
+          >
             Services
-          </Link>
+          </button>
 
-          <Link to="/about" className="hover:text-blue-400 transition">
+          <button
+            onClick={() => scrollToSection("about")}
+            className={`${navText} ${navHover} transition`}
+          >
             About
-          </Link>
+          </button>
 
-          <Link to="/contact" className="hover:text-blue-400 transition">
+          <button
+            onClick={() => scrollToSection("contact")}
+            className={`${navText} ${navHover} transition`}
+          >
             Contact
-          </Link>
+          </button>
+
+          <button
+            onClick={() => scrollToSection("contact")}
+            className={`px-6 py-2.5 rounded-full font-semibold transition shadow-lg ${
+              scrolled
+                ? "bg-brand-600 text-slate-800 border border-slate-800 hover:bg-brand-700 shadow-brand-600/20"
+                : "bg-white/10 backdrop-blur-md text-white border border-white/20 hover:bg-white/20"
+            }`}
+          >
+            Free Consultation
+          </button>
         </div>
 
         <button
-          className="md:hidden text-white text-4xl"
+          className={`md:hidden ${scrolled ? "text-slate-900" : "text-white"}`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          ☰
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
+
       {menuOpen && (
-        <div className="md:hidden fixed inset-0 bg-gray-900 text-white flex flex-col">
-          <div className="flex justify-between items-center px-6 py-4 border-b border-gray-700">
-            <span className="text-xl font-bold">
-              KBT <span className="text-gray-500">Technologies</span>
-            </span>
-
-            <button onClick={() => setMenuOpen(false)} className="text-2xl">
-              ✕
-            </button>
-          </div>
-
-          {/* Menu Links */}
-          <div className="flex flex-col items-center justify-center flex-1 gap-8 text-lg">
-            <Link
-              to="/"
-              className="hover:text-blue-400 transition"
-              onClick={() => setMenuOpen(false)}
+        <div className="md:hidden bg-white border-t border-slate-100 shadow-lg">
+          <div className="px-6 py-6 flex flex-col gap-6 text-lg font-medium">
+            <button
+              onClick={() => scrollToSection("home")}
+              className="text-slate-700"
             >
               Home
-            </Link>
+            </button>
 
-            <Link
-              to="/services"
-              className="hover:text-blue-400 transition"
-              onClick={() => setMenuOpen(false)}
+            <button
+              onClick={() => scrollToSection("services")}
+              className="text-slate-700"
             >
               Services
-            </Link>
+            </button>
 
-            <Link
-              to="/about"
-              className="hover:text-blue-400 transition"
-              onClick={() => setMenuOpen(false)}
+            <button
+              onClick={() => scrollToSection("about")}
+              className="text-slate-700"
             >
               About
-            </Link>
+            </button>
 
-            <Link
-              to="/contact"
-              className=" px-6 py-3 rounded-lg"
-              onClick={() => setMenuOpen(false)}
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="text-slate-700"
             >
               Contact
-            </Link>
+            </button>
+
+            <button
+              onClick={() => scrollToSection("contact")}
+              className="bg-brand-600 text-white px-6 py-3 rounded-xl text-center font-semibold hover:bg-brand-700 transition shadow-md"
+            >
+              Free Consultation
+            </button>
           </div>
         </div>
       )}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Contact() {
   const [loading, setLoading] = useState(false);
@@ -18,9 +19,9 @@ export default function Contact() {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json"
+        Accept: "application/json",
       },
-      body: json
+      body: json,
     }).then((res) => res.json());
 
     if (res.success) {
@@ -37,53 +38,107 @@ export default function Contact() {
   }
 
   return (
-    <section className="py-20 px-6 h-[60vh]">
-      <div className="max-w-2xl mx-auto bg-white shadow-lg border rounded-lg p-10">
-        <h1 className="text-3xl font-bold mb-8 text-center">
-          Contact Us
-        </h1>
+    <section className="py-20 px-6 bg-white">
+      <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
 
-        <form onSubmit={submitForm} className="flex flex-col gap-6">
+        <div>
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+            Let’s Talk
+          </h1>
 
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            required
-            className="border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <p className="text-slate-600 mb-10 text-lg leading-relaxed">
+            Have a project in mind or need IT solutions? Reach out to us and
+            we’ll help you scale your business with the right technology.
+          </p>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            required
-            className="border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+          <div className="space-y-6">
 
-          <textarea
-            name="message"
-            rows="5"
-            placeholder="Your Message"
-            required
-            className="border p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600">
+                <MapPin className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-900">Location</h4>
+                <p className="text-slate-500">Dubai, United Arab Emirates</p>
+              </div>
+            </div>
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="bg-gray-600 text-white py-3 rounded-lg hover:bg-gray-700 transition"
-          >
-            {loading ? "Sending..." : "Send Message"}
-          </button>
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600">
+                <Phone className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-900">Phone</h4>
+                <p className="text-slate-500">+971 XXX XXXX</p>
+              </div>
+            </div>
 
-          {success && (
-            <p className="text-green-600 text-center">
-              Message sent successfully!
-            </p>
-          )}
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-brand-100 rounded-xl flex items-center justify-center text-brand-600">
+                <Mail className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-semibold text-slate-900">Email</h4>
+                <p className="text-slate-500">info@kbtfiesta.com</p>
+              </div>
+            </div>
 
-        </form>
+          </div>
+        </div>
+
+        <div className="bg-slate-50 rounded-3xl p-8 md:p-10 shadow-xl border border-slate-200">
+          <h2 className="text-2xl font-bold text-slate-900 mb-6">
+            Send a Message
+          </h2>
+
+          <form onSubmit={submitForm} className="space-y-6">
+
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 transition"
+              />
+            </div>
+
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 transition"
+              />
+            </div>
+
+            <div>
+              <textarea
+                name="message"
+                rows="5"
+                placeholder="Your Message"
+                required
+                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-brand-500 transition"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-brand-600 text-white bg-slate-800 py-4 rounded-xl font-semibold hover:bg-brand-700 transition shadow-lg shadow-brand-600/20"
+            >
+              {loading ? "Sending..." : "Send Message"}
+            </button>
+
+            {success && (
+              <p className="text-emerald-600 text-center font-medium">
+                 Message sent successfully!
+              </p>
+            )}
+
+          </form>
+        </div>
       </div>
     </section>
   );
