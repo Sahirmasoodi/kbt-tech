@@ -121,7 +121,7 @@ export default function Home() {
       </section>
 
       <section className="py-24 px-6 bg-slate-100">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
               Our Core Services

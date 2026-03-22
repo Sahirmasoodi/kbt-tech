@@ -25,7 +25,7 @@ export default function About() {
       </section>
 
       <section className="py-20 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="bg-slate-50 rounded-3xl p-10 shadow-sm border border-slate-200 text-center hover:shadow-xl transition">
             <p className="text-slate-600 leading-relaxed text-lg">
               KBT Fiesta Technologies is a UAE-based IT service provider delivering reliable

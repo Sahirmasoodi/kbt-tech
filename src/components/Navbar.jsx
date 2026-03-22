@@ -43,8 +43,8 @@ export default function Navbar() {
           onClick={() => scrollToSection("home")}
           className="flex items-center gap-2"
         >
-          <div className="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center">
-            <Cpu className="text-white w-6 h-6" />
+          <div className="w-10 h-10 bg-brand-600 rounded-lg flex items-center justify-center ">
+            <img src="main.png" className={`${scrolled ?"bg-black":"bg-white"} `}/>
           </div>
 
           <span
@@ -138,7 +138,7 @@ export default function Navbar() {
 
             <button
               onClick={() => scrollToSection("contact")}
-              className="bg-brand-600 text-white px-6 py-3 rounded-xl text-center font-semibold hover:bg-brand-700 transition shadow-md"
+              className="bg-slate-300  px-6 py-2 text-slate-700 rounded-xl text-center font-semibold hover:bg-brand-700 transition shadow-md"
             >
               Free Consultation
             </button>

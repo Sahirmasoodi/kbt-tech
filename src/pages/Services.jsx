@@ -224,7 +224,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-4 gap-6">
           {additionalServices.map((service, index) => (
             <div
               key={index}
@@ -237,7 +237,7 @@ export default function Services() {
       </section>
 
       <section className="py-24 px-6 bg-slate-100">
-        <div className="max-w-5xl mx-auto text-center mb-12">
+        <div className="max-w-7xl mx-auto text-center mb-12">
           <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">
             Industries We Serve
           </h2>
@@ -247,7 +247,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {industries.map((industry, index) => (
             <div
               key={index}
