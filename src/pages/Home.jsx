@@ -31,7 +31,7 @@ export default function Home() {
 
   return (
     <div>
-      <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-50 ">
+      <section className="relative min-h-screen flex items-center overflow-hidden bg-slate-100 ">
         <div className="absolute inset-0">
           <img
             src="/4.webp"
@@ -120,7 +120,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-white">
+      <section className="py-24 px-6 bg-slate-100">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-4">

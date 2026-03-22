@@ -38,7 +38,7 @@ export default function Contact() {
   }
 
   return (
-    <section className="py-20 px-6 bg-white">
+    <section className="py-20 px-6 bg-slate-100">
       <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-start">
 
         <div>

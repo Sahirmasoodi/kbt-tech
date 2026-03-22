@@ -106,7 +106,7 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden bg-white border-t border-slate-100 shadow-lg">
+        <div className="md:hidden bg-slate-100 border-t border-slate-100 shadow-lg">
           <div className="px-6 py-6 flex flex-col gap-6 text-lg font-medium">
             <button
               onClick={() => scrollToSection("home")}

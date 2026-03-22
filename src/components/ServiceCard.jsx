@@ -7,7 +7,7 @@ export default function ServiceCard({
   features = [],
 }) {
   return (
-    <div className="group p-8 rounded-3xl bg-white border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full hover:-translate-y-2">
+    <div className="group p-8 rounded-3xl bg-slate-50 border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full hover:-translate-y-2">
     
       <div className="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center mb-6 text-brand-600 group-hover:scale-110 transition">
         {Icon && <Icon className="w-7 h-7" />}

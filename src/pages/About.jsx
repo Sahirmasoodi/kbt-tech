@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div className="bg-white">
+    <div className="bg-slate-100">
 
       <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center text-center overflow-hidden">
         <img
