@@ -27,28 +27,6 @@ export default function Services() {
       ],
     },
     {
-      title: "Managed End-User IT Support",
-      items: [
-        "Remote helpdesk support",
-        "Desktop & laptop troubleshooting",
-        "Device management",
-        "Software installation",
-        "System updates & patch management",
-        "IT onboarding for employees",
-      ],
-    },
-    {
-      title: "Email & Collaboration Services",
-      items: [
-        "Microsoft 365 setup",
-        "Google Workspace setup",
-        "Email migration",
-        "Spam filtering",
-        "Email security",
-        "Backup & archiving",
-      ],
-    },
-    {
       title: "Cloud Infrastructure Services",
       items: [
         "AWS cloud deployment",
@@ -240,7 +218,7 @@ export default function Services() {
           ))}
         </div>
       </section>
-{/* 
+      {/* 
       <section className="bg-brand-900  py-24 text-center px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">
           Need Professional IT Services?
